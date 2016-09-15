@@ -8,7 +8,9 @@
 			<div class="box box-success">
 
 
-				
+				<div id=""os">
+					
+				</div>
 				<div class="box-header with-border">
 			  		<h3 class="box-title">NUEVO USUARIO</h3>
 					
