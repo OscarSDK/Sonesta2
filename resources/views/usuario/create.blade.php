@@ -8,7 +8,7 @@
 			<div class="box box-success">
 
 
-				<div id=""os">
+				<div id=""oscar">
 					
 				</div>
 				<div class="box-header with-border">
