@@ -79,6 +79,12 @@
 				<tbody>
 				</tbody>
 				</table>
+
+				<div id="cajasComisiones" class="col-md-2">
+					
+				</div>
+
+
 				</form>
 
 				<?php
@@ -153,7 +159,7 @@
 			var fechaFinal=arregloFecha[1].trim();
 			fechaInicio=fechaInicio.replace(/[/]/gi,"-");
 			fechaFinal=fechaFinal.replace(/[/]/gi,"-");
-			console.log(nombreUsuario,fechaInicio,fechaFinal);
+			//console.log(nombreUsuario,fechaInicio,fechaFinal);
 			Carga(nombreUsuario,fechaInicio,fechaFinal);
 
 			

@@ -1,8 +1,61 @@
 $(document).ready(function(){
+
+    $("#formVenta" ).validate( 
+    {
+        rules: {   
+                    cantidad: {
+                        required: true,
+                        minlength: 5
+                    },
+                },
+        messages: {
+                    
+                    cantidad: {
+                        required: "Porfavor ingrese cantidad",
+                    },
+                },
+        errorElement: "em",
+                errorPlacement: function ( error, element ) {
+                    // Add the `help-block` class to the error element
+                    error.addClass( "help-block" );
+
+                    // Add `has-feedback` class to the parent div.form-group
+                    // in order to add icons to inputs
+                    element.parents( ".col-sm-5" ).addClass( "has-feedback" );
+
+                    if ( element.prop( "type" ) === "checkbox" ) {
+                        error.insertAfter( element.parent( "label" ) );
+                    } else {
+                        error.insertAfter( element );
+                    }
+
+                    // Add the span element, if doesn't exists, and apply the icon classes to it.
+                    if ( !element.next( "span" )[ 0 ] ) {
+                        $( "<span class='glyphicon glyphicon-remove form-control-feedback'></span>" ).insertAfter( element );
+                    }
+                },
+                success: function ( label, element ) {
+                    // Add the span element, if doesn't exists, and apply the icon classes to it.
+                    if ( !$( element ).next( "span" )[ 0 ] ) {
+                        $( "<span class='glyphicon glyphicon-ok form-control-feedback'></span>" ).insertAfter( $( element ) );
+                    }
+                },
+                highlight: function ( element, errorClass, validClass ) {
+                    $( element ).parents( ".col-sm-5" ).addClass( "has-error" ).removeClass( "has-success" );
+                    $( element ).next( "span" ).addClass( "glyphicon-remove" ).removeClass( "glyphicon-ok" );
+                },
+                unhighlight: function ( element, errorClass, validClass ) {
+                    $( element ).parents( ".col-sm-5" ).addClass( "has-success" ).removeClass( "has-error" );
+                    $( element ).next( "span" ).addClass( "glyphicon-ok" ).removeClass( "glyphicon-remove" );
+                }
+    })
+
+});
+$(document).ready(function(){
       $( function() { 
 
         $( "#codigo" ).autocomplete({
-            source: "http://localhost/fff/public/producto/autocomplete",
+            source: "http://localhost/Sonesta2/public/producto/autocomplete",
             minlenght:1,
             autoFocus:true,
             select:function(e,ui){
@@ -128,7 +181,7 @@ $("#btnRecorrer").click(function () {
 
 
 
-    var route1 = "http://localhost/fff/public/venta";
+    var route1 = "http://localhost/Sonesta2/public/venta";
     var token = $("#token").val();
 
     alert("precio total"+preciototal);
@@ -175,7 +228,7 @@ $("#btnRecorrer").click(function () {
 
 
 
-            var route = "http://localhost/fff/public/detalleventa";
+            var route = "http://localhost/Sonesta2/public/detalleventa";
             var token = $("#token").val();
 
             $.ajax({
@@ -213,7 +266,7 @@ $("#btnRecorrer").click(function () {
                 $(this).css("background-color", "#ECF8E0");
             })
 
-                var route = "http://localhost/fff/public/pagoventa";
+                var route = "http://localhost/Sonesta2/public/pagoventa";
                 var token = $("#token").val();
 
                 $.ajax({
@@ -248,7 +301,7 @@ $("#btnRecorrer").click(function () {
                             var comision=(monto*3/100)/numerovendedores;
                             alert(vendedor);
 
-                            var route = "http://localhost/fff/public/ventausuario";
+                            var route = "http://localhost/Sonesta2/public/ventausuario";
                             var token = $("#token").val();
 
                             $.ajax({
@@ -270,7 +323,7 @@ $("#btnRecorrer").click(function () {
 
             })//fin recorrido moneda
 
-                        swal("SUCCESSFULL!", "VENTA AGREGADA CORRECTAMENTE.", "success", window.location.href = "/fff/public/venta");
+                        swal("SUCCESSFULL!", "VENTA AGREGADA CORRECTAMENTE.", "success", window.location.href = "/Sonesta2/public/venta");
 
 
 
@@ -281,7 +334,7 @@ $("#btnRecorrer").click(function () {
                         swal("CANCELADO","UD A CANCELADO LA OPERACION ","error");   
                     }
 
-                //window.location.href = "/fff/public/venta";        
+                //window.location.href = "/Sonesta2/public/venta";        
                 });
     
 });
