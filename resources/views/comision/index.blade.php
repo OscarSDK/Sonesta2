@@ -80,24 +80,19 @@
 				</tbody>
 				</table>
 
-				<div id="cajasComisiones" class="col-md-2">
-					
-				</div>
-
-
+				
 				</form>
 
-				<?php
-					$cantidad=1;
-					$moneda_origen='USD';
-					$moneda_destino='PEN';
-					$get = file_get_contents("https://www.google.com/finance/converter?a=$cantidad&from=$moneda_origen&to=$moneda_destino");
-					$get = explode("<span class=bld>",$get);
-					$get = explode("</span>",$get[1]);  
-					echo preg_replace("/[^0-9\.]/", null, $get[0]); 
-				?>
 </div>
 </div>
+
+<pre class="col-md-6 col-md-offset-3">
+					
+	<div id="cajasComisiones" >
+						
+	</div>
+
+</pre>
 </div>
 </div>
 </div>
