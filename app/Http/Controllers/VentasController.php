@@ -16,7 +16,6 @@ class VentasController extends Controller {
 	 * @return Response
 	 */
 
-
 	public function index(Request $request)
 	{
 

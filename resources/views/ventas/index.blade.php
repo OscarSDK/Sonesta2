@@ -82,17 +82,6 @@
 
 		
 		<tbody id="datos-ventas">
-			
-
-
-
-
-	@section('scripts')
-	
-		<script src="{{asset('js/ver_ventas.js')}}"></script>
-
-	@stop	
-
 
 		</tbody>
 
@@ -104,3 +93,10 @@
 </div>
 </div>
 @stop
+
+
+@section('scripts')
+	
+	<script src="{{asset('js/ventas.js')}}"></script>
+
+@stop	

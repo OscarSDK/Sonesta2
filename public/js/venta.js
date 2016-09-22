@@ -201,7 +201,7 @@ $("#btnRecorrer").click(function () {
         })
 
 
-        
+        //--------DETALLE DE VENTA------------
         $("#tabla tbody tr").each(function (index) {
           var campo1, campo2, campo3, campo4, campo5, campo6;    
             $(this).children("td").each(function (index2) {

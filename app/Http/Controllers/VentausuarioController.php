@@ -2,8 +2,15 @@
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\ventausuario;
 use Illuminate\Http\Request;
+use venta;
+use DB;
+
+
+
+use Session;
+use Redirect;
+
 
 class VentausuarioController extends Controller {
 
@@ -12,9 +19,13 @@ class VentausuarioController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function index()
+	public function index(Request $request)
 	{
-		//
+		if ($request->ajax()) {
+            $ventausuario = venta::all();
+            return response()->json($ventausuario);
+        }
+        return view('ventas.ventasVendedor');
 	}
 
 	/**
